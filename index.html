@@ -3,86 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>plant.08 - Learn Plant Care</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title>plant-08 - Your Plant Growing Guide</title>
+    <link rel="stylesheet" href="CSS/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
+
+    <!-- FIXED PLANT WATERMARK -->
+    <canvas id="plantWatermark" class="watermark"></canvas>
+    
+    <div class="hero">
+        <div class="hero-bg">
+            <canvas id="bgCanvas"></canvas>
+        </div>
         <header class="header">
-            <h1 class="logo">🌱 plant.08</h1>
-            <p class="tagline">Learn to grow and care for plants</p>
+            <div class="logo">
+                <div class="leaf-icon">🌿</div>
+                <h1>plant-08</h1>
+            </div>
+            <nav class="nav">
+                <a href="browse.html">Search</a>
+                <a href="explore.html">Explore</a>
+            </nav>
         </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Search Section -->
-            <section class="search-section">
-                <h2>Which plant are you growing?</h2>
-                
-                <!-- Plant Input with Autocomplete -->
-                <div class="search-container">
-                    <input 
-                        type="text" 
-                        id="plantSearch" 
-                        class="search-input" 
-                        placeholder="Search for a plant (e.g., Tomato, Basil, Rose)..."
-                        autocomplete="off"
-                    >
-                    <div id="searchSuggestions" class="search-suggestions"></div>
-                </div>
-
-                <!-- Search Button -->
-                <button id="selectPlantBtn" class="btn btn-primary" disabled>
-                    Get Care Guide
-                </button>
-            </section>
-
-            <!-- Divider -->
-            <div class="divider">
-                <span>OR</span>
+        <div class="hero-content">
+            <h1 class="hero-title">Grow Your Green Paradise</h1>
+            <p class="hero-subtitle">Master the art of plant care with expert guides on soil, watering, and more</p>
+            <div class="cta-buttons">
+                <button class="cta-primary" onclick="window.location.href='browse.html'">Start Growing</button>
+                <a href="explore.html" class="cta-secondary" style="text-decoration:none;">Browse Plants →</a>
             </div>
-
-            <!-- Explore Section -->
-            <section class="explore-section">
-                <h2>Browse All Plants</h2>
-                <p>Don't know which plant to choose? Check out our complete plant collection.</p>
-                <a href="explore.html" class="btn btn-secondary">
-                    Explore Plants →
-                </a>
-            </section>
-        </main>
-
-        <!-- Features Section -->
-        <section class="features">
-            <h3>How plant.08 Works</h3>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
-                    <h4>Select a Plant</h4>
-                    <p>Search for or browse the plant you want to grow</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h4>Choose Your Stage</h4>
-                    <p>Pick the current stage: seed, seedling, or tree</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h4>Get a Guide</h4>
-                    <p>Learn everything about soil, water, sunlight & care</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2026 plant.08 - Open-source plant care guide. Made with 🌱 for beginners.</p>
-        </footer>
+        </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="JS/guide-data.js"></script>
-    <script src="JS/script.js"></script>
+    <section id="plant-guide" class="plant-guide">
+    <!-- 🌱 SOIL - Card LEFT, Description RIGHT -->
+    <div class="guide-slide soil-slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="card-side left-card">
+                    <div class="guide-card soil-card">
+                        <div class="card-icon">🌱</div>
+                        <h3>Soil Guide</h3>
+                        <p>Perfect soil mix for every plant</p>
+                        <div class="soil-types">
+                            <span>🟤 Clay</span>
+                            <span>🟡 Sandy</span>
+                            <span>🟢 Loamy ✓</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="desc-side right-desc">
+                    <h2 class="slide-title">🌍 Master Your Soil</h2>
+                    <div class="desc-content">
+                        <p class="highlight">Loamy soil is <strong>BEST</strong> - 40% sand, 40% silt, 20% clay</p>
+                        <div class="ph-meter">
+                            <div class="meter-track">
+                                <div class="meter-fill"></div>
+                            </div>
+                            <span class="ph-label">Ideal: 6.0-7.0 pH</span>
+                        </div>
+                        <ul class="pro-tips">
+                            <li>💡 Add 3" compost yearly</li>
+                            <li>🧪 Test pH every spring</li>
+                            <li>🌿 Mulch for moisture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 💧 WATERING - Card RIGHT, Description LEFT -->
+    <div class="guide-slide watering-slide">
+        <div class="container">
+            <div class="slide-content reverse">
+                <div class="desc-side left-desc">
+                    <h2 class="slide-title">💧 Watering Schedule</h2>
+                    <div class="desc-content">
+                        <div class="watering-wheel">
+                            <div class="wheel-item spring">Spring<br>2-3x/week</div>
+                            <div class="wheel-item summer">Summer<br>3-4x/week</div>
+                            <div class="wheel-item autumn">Fall<br>1-2x/week</div>
+                            <div class="wheel-item winter">Winter<br>1x/week</div>
+                        </div>
+                        <p class="highlight">👆 <strong>Finger Test:</strong> Dry 2" deep = WATER!</p>
+                    </div>
+                </div>
+                <div class="card-side right-card">
+                    <div class="guide-card watering-card">
+                        <div class="card-icon">💧</div>
+                        <h3>Watering</h3>
+                        <p>Perfect schedule for every season</p>
+                        <div class="water-drop">💧</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🌸 FLOWERS - Card LEFT, Description RIGHT -->
+    <div class="guide-slide flowers-slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="card-side left-card">
+                    <div class="guide-card flowers-card">
+                        <div class="card-icon">🌸</div>
+                        <h3>Flowers</h3>
+                        <p>Blooming beauty secrets</p>
+                        <div class="flower-blooms">
+                            <span>🌹</span><span>🌻</span><span>🌷</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="desc-side right-desc">
+                    <h2 class="slide-title">🌺 Flower Magic</h2>
+                    <div class="desc-content">
+                        <p class="highlight"><strong>6+ hours sun</strong> = Maximum blooms!</p>
+                        <div class="sun-rays">☀️☀️☀️☀️☀️☀️</div>
+                        <ul class="pro-tips">
+                            <li>✂️ Deadhead spent flowers</li>
+                            <li>💧 Morning watering best</li>
+                            <li>🌬️ Good air circulation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🍎 FRUITS - Card RIGHT, Description LEFT -->
+    <div class="guide-slide fruits-slide">
+        <div class="container">
+            <div class="slide-content reverse">
+                <div class="desc-side left-desc">
+                    <h2 class="slide-title">🍎 Fruit Harvest</h2>
+                    <div class="desc-content">
+                        <p class="highlight">🐝 <strong>Bees = 80% more fruit!</strong></p>
+                        <div class="fruit-tree-anim">🍎🍓🍇</div>
+                        <ul class="pro-tips">
+                            <li>🌞 Full sun required</li>
+                            <li>✂️ Prune winter</li>
+                            <li>💧 Consistent moisture</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-side right-card">
+                    <div class="guide-card fruits-card">
+                        <div class="card-icon">🍎</div>
+                        <h3>Fruits</h3>
+                        <p>Harvest sweet success</p>
+                        <div class="fruit-icons">🍓🍎🍇</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🌿 HERBS - Card LEFT, Description RIGHT -->
+    <div class="guide-slide herbs-slide">
+        <div class="container">
+            <div class="slide-content">
+                <div class="card-side left-card">
+                    <div class="guide-card herbs-card">
+                        <div class="card-icon">🌿</div>
+                        <h3>Herbs</h3>
+                        <p>Fresh flavors at home</p>
+                        <div class="herb-leaves">🌿🌱🌾</div>
+                    </div>
+                </div>
+                <div class="desc-side right-desc">
+                    <h2 class="slide-title">🌿 Herb Harvest</h2>
+                    <div class="desc-content">
+                        <p class="highlight">✂️ <strong>Cut top growth</strong> = Bushier plants!</p>
+                        <div class="harvest-demo">
+                            <span class="before">🌿</span>
+                            <span class="scissors">✂️</span>
+                            <span class="after">🌿🌿🌿</span>
+                        </div>
+                        <ul class="pro-tips">
+                            <li>🌞 6 hours sun</li>
+                            <li>💧 Let soil dry between</li>
+                            <li>🍽️ Use fresh daily</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🥕 VEGETABLES - Card RIGHT, Description LEFT -->
+    <div class="guide-slide vegetables-slide">
+        <div class="container">
+            <div class="slide-content reverse">
+                <div class="desc-side left-desc">
+                    <h3 class="slide-title">🥕 Veggie Power</h3>
+                    <div class="desc-content">
+                        <p class="highlight"><strong>Fast growers:</strong> Radish (25d), Lettuce (30d)</p>
+                        <div class="veggie-grid">
+                            <span>🥬 Lettuce</span>
+                            <span>🌱 Radish</span>
+                            <span>🥒 Cucumber</span>
+                        </div>
+                        <ul class="pro-tips">
+                            <li>📏 Proper spacing</li>
+                            <li>🛡️ Neem oil for pests</li>
+                            <li>🌞 Full sun</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-side right-card">
+                    <div class="guide-card vegetables-card">
+                        <div class="card-icon">🥕</div>
+                        <h3>Vegetables</h3>
+                        <p>Grow your own veggies</p>
+                        <div class="veggie-roots">🥕🥬🥒</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 plant.08. Made with ❤️ for plant lovers.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Background animated plants
+        class LeavesAnimation {
+            constructor() {
+                this.canvas = document.getElementById('bgCanvas');
+                if (!this.canvas) return;
+                this.ctx = this.canvas.getContext('2d');
+                this.resizeCanvas();
+                this.leaves = [];
+                this.initLeaves();
+                this.animate();
+                window.addEventListener('resize', () => this.resizeCanvas());
+            }
+
+            resizeCanvas() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            initLeaves() {
+                for (let i = 0; i < 30; i++) {
+                    this.leaves.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height - this.canvas.height,
+                        size: Math.random() * 25 + 10,
+                        speed: Math.random() * 1 + 0.5,
+                        sway: Math.random() * 0.03 + 0.02,
+                        swayAmount: Math.random() * 50 + 30,
+                        rotation: Math.random() * Math.PI * 2,
+                        rotationSpeed: Math.random() * 0.05 + 0.02,
+                        phase: Math.random() * Math.PI * 2,
+                        color: ['#6bb18b', '#8fbb9c', '#a8e6cf', '#dcedc1', '#7fbd7f'][Math.floor(Math.random() * 5)]
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                const gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
+                gradient.addColorStop(0, 'rgba(102, 126, 234, 0.3)');
+                gradient.addColorStop(1, 'rgba(118, 75, 162, 0.3)');
+                this.ctx.fillStyle = gradient;
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.leaves.forEach(leaf => {
+                    this.drawLeaf(leaf);
+                    leaf.y += leaf.speed;
+                    leaf.x += Math.sin(leaf.phase) * leaf.sway;
+                    leaf.phase += 0.02;
+                    leaf.rotation += leaf.rotationSpeed;
+                    
+                    if (leaf.y > this.canvas.height + leaf.size) {
+                        leaf.y = -leaf.size;
+                        leaf.x = Math.random() * this.canvas.width;
+                        leaf.phase = Math.random() * Math.PI * 2;
+                    }
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+
+            drawLeaf(leaf) {
+                this.ctx.save();
+                this.ctx.translate(leaf.x, leaf.y);
+                this.ctx.rotate(leaf.rotation);
+                this.ctx.globalAlpha = 0.8;
+
+                this.ctx.fillStyle = leaf.color;
+                this.ctx.beginPath();
+                // Draw a leaf shape
+                this.ctx.ellipse(0, 0, leaf.size * 0.6, leaf.size, 0, 0, Math.PI * 2);
+                this.ctx.fill();
+
+                // Add a vein down the middle
+                this.ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)';
+                this.ctx.lineWidth = 1;
+                this.ctx.beginPath();
+                this.ctx.moveTo(0, -leaf.size * 0.8);
+                this.ctx.lineTo(0, leaf.size * 0.8);
+                this.ctx.stroke();
+
+                this.ctx.restore();
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            new LeavesAnimation();
+
+            // Animate guide slides on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.guide-slide').forEach(slide => {
+                observer.observe(slide);
+            });
+
+            // Animate meter fill
+            const meterFill = document.querySelector('.meter-fill');
+            if (meterFill) {
+                setTimeout(() => {
+                    meterFill.style.width = '70%';
+                }, 500);
+            }
+        });
+    </script>
 </body>
 </html>
