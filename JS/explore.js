@@ -11,21 +11,26 @@ document.addEventListener('DOMContentLoaded', function() {
         'Lettuce': '🥬',
         'Rose': '🌹',
         'Sunflower': '🌻',
-        'Mint': '🌿',
-        'Parsley': '🌿',
+        'Mint': '☘️',
+        'Parsley': '🥬',
         'Spinach': '🥬',
         'Carrot': '🥕',
         'Cucumber': '🥒',
         'Tulip': '🌷',
         'Daffodil': '🌼',
-        'Thyme': '🌿',
-        'Oregano': '🌿',
+        'Thyme': '🪴',
+        'Oregano': '🫒',
         'Bell Pepper': '🫑',
         'Broccoli': '🥦',
-        'Lavender': '💜',
-        'Daisy': '🌼',
-        'Sage': '🌿',
-        'Chives': '🌿',
+        'Lavender': '🌸',
+        'Daisy': '🏵️',
+        'Sage': '🍃',
+        'Chives': '🧅',
+        'Apple': '🍎',
+        'Banana': '🍌',
+        'Orange': '🍊',
+        'Strawberry': '🍓',
+        'Mango': '🥭',
     };
 
     function displayPlants(plantsToDisplay) {
@@ -55,7 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Button click
         document.querySelectorAll('.plant-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                sessionStorage.setItem('selectedPlantId', this.dataset.id);
+                const plantId = this.dataset.id;
+                const plantCard = this.closest('.plant-card');
+                const plantName = plantCard.querySelector('.plant-name').textContent;
+                
+                sessionStorage.setItem('selectedPlantId', plantId);
+                sessionStorage.setItem('selectedPlantName', plantName);
                 window.location.href = 'stage.html';
             });
         });

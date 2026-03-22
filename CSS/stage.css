@@ -2,29 +2,31 @@
 /* === Stage CSS File === */
 
 .plant-info-section {
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
     padding: 30px;
     margin-bottom: 30px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .plant-info-section h2 {
     font-size: 2em;
-    color: #27ae60;
+    color: #667eea;
     margin-bottom: 10px;
     font-weight: 700;
 }
 
 .plant-info-section p {
     font-size: 1.1em;
-    color: #7f8c8d;
+    color: #764ba2;
     font-weight: 500;
 }
 
 #plantNameSpan {
-    color: #27ae60;
+    color: #667eea;
     font-weight: 700;
 }
 
@@ -38,26 +40,28 @@
 
 /* === Stage Card === */
 .stage-card {
-    background: white;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
     padding: 30px 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     border: 3px solid transparent;
     transition: all 0.3s ease;
     cursor: pointer;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .stage-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    border-color: #27ae60;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    border-color: #a8e6cf;
 }
 
 .stage-card.selected {
-    border-color: #27ae60;
-    background: #f0f7f0;
-    box-shadow: 0 8px 15px rgba(39, 174, 96, 0.3);
+    border-color: #a8e6cf;
+    background: linear-gradient(135deg, #f8fff5 0%, #e8f5e8 100%);
+    box-shadow: 0 15px 35px rgba(168, 230, 207, 0.3);
 }
 
 .stage-icon {
@@ -67,47 +71,52 @@
 
 .stage-card h3 {
     font-size: 1.5em;
-    color: #27ae60;
+    color: #667eea;
     margin-bottom: 12px;
     font-weight: 700;
 }
 
 .stage-description {
     font-size: 0.95em;
-    color: #7f8c8d;
+    color: #764ba2;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .btn-stage {
-    background: #27ae60;
-    color: white;
+    background: linear-gradient(45deg, #a8e6cf, #dcedc1);
+    color: #2d5016;
     width: 100%;
     padding: 12px 20px;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(168, 230, 207, 0.3);
 }
 
 .btn-stage:hover {
-    background: #229954;
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(168, 230, 207, 0.5);
 }
 
 .stage-card.selected .btn-stage {
-    background: #229954;
+    box-shadow: 0 8px 20px rgba(168, 230, 207, 0.5);
 }
 
 /* === Info Box === */
 .info-box {
-    background: #f0f7f0;
-    border-left: 4px solid #27ae60;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #f8fff5 0%, #e8f5e8 100%);
+    border-left: 4px solid #a8e6cf;
+    border-radius: 15px;
     padding: 25px;
     margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(168, 230, 207, 0.2);
 }
 
 .info-box h3 {
-    color: #27ae60;
+    color: #667eea;
     margin-bottom: 15px;
     font-weight: 700;
 }
@@ -121,7 +130,7 @@
     padding: 10px 0;
     color: #555;
     line-height: 1.6;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid rgba(168, 230, 207, 0.2);
 }
 
 .info-box li:last-child {
@@ -129,7 +138,7 @@
 }
 
 .info-box strong {
-    color: #27ae60;
+    color: #667eea;
 }
 
 /* === Responsive Design === */
