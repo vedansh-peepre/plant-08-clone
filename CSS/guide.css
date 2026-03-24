@@ -19,7 +19,7 @@
 
 .overview-section h2 {
     font-size: 1.8em;
-    color: #667eea;
+    color: #2d6a4f;
     margin-bottom: 15px;
     font-weight: 700;
 }
@@ -37,7 +37,7 @@
 
 .care-section h2 {
     font-size: 1.8em;
-    color: #667eea;
+    color: #2d6a4f;
     margin-bottom: 25px;
     font-weight: 700;
 }
@@ -60,8 +60,8 @@
 
 .care-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
-    border-color: #a8e6cf;
+    box-shadow: 0 15px 35px rgba(82, 183, 136, 0.15);
+    border-color: #076217;
 }
 
 .care-icon {
@@ -72,7 +72,7 @@
 
 .care-card h3 {
     font-size: 1.3em;
-    color: #667eea;
+    color: #2d6a4f;
     text-align: center;
     margin-bottom: 15px;
     font-weight: 700;
@@ -98,23 +98,23 @@
 }
 
 .care-info strong {
-    color: #667eea;
+    color: #2d6a4f;
     font-weight: 600;
 }
 
 /* === Tips Section === */
 .tips-section {
-    background: linear-gradient(135deg, #f8fff5 0%, #e8f5e8 100%);
-    border-left: 4px solid #a8e6cf;
+    background: linear-gradient(135deg, #b0d3a2 0%, #cceac1 100%);
+    border-left: 4px solid #52b788;
     border-radius: 15px;
     padding: 25px;
     margin-bottom: 30px;
-    box-shadow: 0 10px 25px rgba(168, 230, 207, 0.2);
+    box-shadow: 0 10px 25px rgba(82, 183, 136, 0.2);
 }
 
 .tips-section h2 {
     font-size: 1.5em;
-    color: #667eea;
+    color: #2d6a4f;
     margin-bottom: 20px;
     font-weight: 700;
 }
@@ -128,10 +128,10 @@
     background: white;
     padding: 15px;
     border-radius: 10px;
-    border-left: 3px solid #a8e6cf;
+    border-left: 3px solid #52b788;
     color: #555;
     line-height: 1.6;
-    box-shadow: 0 5px 15px rgba(168, 230, 207, 0.1);
+    box-shadow: 0 5px 15px rgba(82, 183, 136, 0.1);
 }
 
 /* === Navigation Section === */
