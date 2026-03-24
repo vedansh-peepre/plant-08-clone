@@ -74,6 +74,3 @@ Plant-O8 not only provides plant care information but also enables users to moni
 Plant-O8 aims to bridge the gap between plant ownership and proper plant care by using technology to guide and assist users in maintaining healthy plants.
 
 ---
-
-## ✨ Pitch Line
-> “Plant-O8 is your smart plant companion, making plant care simple, efficient, and stress-free.” 🌿
