@@ -143,17 +143,15 @@ body {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 20px;
-    background: linear-gradient(45deg, #52b788, #74c69d, #9ad68c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #126138;
 }
 
 .hero-subtitle {
     font-size: 1.3rem;
     margin-bottom: 40px;
-    opacity: 0.9;
-    font-weight: 300;
+    opacity: 1.0;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cta-buttons {
@@ -177,12 +175,12 @@ body {
 
 .cta-primary {
     background: linear-gradient(45deg, #52b788, #74c69d);
-    color: #0b3b29;
+    color: white;
     box-shadow: 0 10px 30px rgba(82, 183, 136, 0.4);
 }
 
 .cta-primary:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.05);
     box-shadow: 0 20px 40px rgba(82, 183, 136, 0.6);
 }
 
@@ -190,11 +188,15 @@ body {
     background: transparent;
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .cta-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 /* Footer */
