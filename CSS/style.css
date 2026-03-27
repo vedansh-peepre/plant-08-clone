@@ -32,8 +32,8 @@ body {
     left: 0;
     width: 100%;
     z-index: 2000;
-    padding: 18px 40px;
-    background: rgba(18, 97, 56, 0.95);
+    padding: 10.8px 24px;
+    background: #427D2B;
     color: #ffffff;
     border-radius: 0;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.24);
@@ -41,22 +41,22 @@ body {
     margin-bottom: 0;
     margin-top: 0;
     backdrop-filter: blur(10px);
-    border-bottom: 2px solid #2db47a;
+    border-bottom: 2px solid #0276447b;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 80px;
+    min-height: 48px;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     color: #ffffff;
     margin-bottom: 0;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 12px;
+    gap: 7.2px;
 }
 
 .logo h1 {
@@ -101,7 +101,7 @@ body {
 }
 
 .leaf-icon {
-    font-size: 28px;
+    font-size: 16.8px;
 }
 
 .tagline {
@@ -379,18 +379,18 @@ body {
     }
 
     .header {
-        padding: 20px 15px;
-        margin: 15px 0;
+        padding: 12px 9px;
+        margin: 9px 0;
         text-align: center;
     }
 
     .logo {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
+        font-size: 1.08rem;
+        margin-bottom: 4.8px;
     }
 
     .tagline {
-        font-size: 1em;
+        font-size: 0.6em;
     }
 
     .main-content {
@@ -508,16 +508,16 @@ body {
     }
 
     .header {
-        padding: 15px 10px;
-        margin: 10px 0;
+        padding: 9px 6px;
+        margin: 6px 0;
     }
 
     .logo {
-        font-size: 1.6rem;
+        font-size: 0.96rem;
     }
 
     .tagline {
-        font-size: 0.9em;
+        font-size: 0.54em;
     }
 
     .main-content,
