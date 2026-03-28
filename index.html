@@ -23,11 +23,15 @@
                 <div class="leaf-icon">🌿</div>
                 <h1>plant-08</h1>
             </div>
-            <nav class="nav">
+            <button class="nav-toggle" type="button" aria-label="Open navigation" aria-controls="primaryNav" aria-expanded="false">
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav class="nav" id="primaryNav">
                 <a href="browse.html">Search</a>
                 <a href="explore.html">Explore</a>
             </nav>
         </header>
+        <div class="nav-backdrop" data-nav-backdrop></div>
 
         <div class="hero-content">
             <h1 class="hero-title">Grow Your Green Paradise</h1>
@@ -347,15 +351,27 @@
                 observer.observe(slide);
             });
 
-            // One-time blur reveal on desc-side with synced meter-fill animation
+            // Scroll-driven blur reveal on desc-side with synced meter-fill animation
             let meterAnimationTriggered = false;
-            
-            document.querySelectorAll('.desc-side').forEach(descSide => {
-                descSide.addEventListener('mouseenter', function() {
-                    if (!this.classList.contains('revealed')) {
-                        this.classList.add('revealed');
-                        
-                        // Trigger meter-fill animation on first reveal
+            const descSides = Array.from(document.querySelectorAll('.desc-side'));
+
+            const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+            const updateDescSideBlur = () => {
+                const viewportHeight = window.innerHeight || 1;
+
+                descSides.forEach((descSide) => {
+                    const rect = descSide.getBoundingClientRect();
+                    const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+                    const maxVisible = Math.min(rect.height || 1, viewportHeight);
+                    const revealProgress = clamp(visibleHeight / maxVisible, 0, 1);
+                    const blurAmount = (1 - revealProgress) * 4;
+
+                    descSide.style.setProperty('--blur-amount', `${blurAmount.toFixed(2)}px`);
+
+                    if (revealProgress >= 0.6) {
+                        descSide.classList.add('revealed');
+
                         if (!meterAnimationTriggered) {
                             meterAnimationTriggered = true;
                             const meterFill = document.querySelector('.meter-fill');
@@ -364,10 +380,25 @@
                             }
                         }
                     }
-                }, { once: false });
-            });
+                });
+            };
+
+            let blurTicking = false;
+            const handleScrollBlur = () => {
+                if (blurTicking) return;
+                blurTicking = true;
+                requestAnimationFrame(() => {
+                    updateDescSideBlur();
+                    blurTicking = false;
+                });
+            };
+
+            window.addEventListener('scroll', handleScrollBlur, { passive: true });
+            window.addEventListener('resize', handleScrollBlur);
+            updateDescSideBlur();
         });
     </script>
+    <script src="JS/nav.js"></script>
     
 </body>
 </html>
